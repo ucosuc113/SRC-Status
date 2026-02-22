@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SRC STATUS: IN-PROCESS</title>
+    <title>SRC STATUS: RESOLVED</title>
     <style>
         @font-face {
             font-family: "Infinity";
@@ -229,28 +229,61 @@
 }
 
         /* Tercer espacio */
-        .side-number {
-            position: absolute;
-            top: 30%;
-            right: 1vw;
-            transform: translateY(-50%);
-            font-size: clamp(24px, 6vw, 90px);
-            background: linear-gradient(
-                90deg,
-                #39ff14 0%,
-                #39ff14 15%,
-                #7fff7f 35%,
-                #ffffff 50%,
-                #7fff7f 65%,
-                #39ff14 85%,
-                #39ff14 100%
-            );
-            background-size: 200% auto;
-            background-clip: text;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            animation: colorSweep 2.5s linear infinite;
-        }
+.side-number {
+    position: absolute;
+    top: 30%;
+    right: 1vw;
+    transform: translateY(-50%);
+    font-weight: bold;
+    font-size: clamp(32px, 6vw, 90px);
+
+    background: linear-gradient(
+        90deg,
+        #39ff14 0%,
+        #39ff14 15%,
+        #7fff7f 35%,
+        #ffffff 50%,
+        #7fff7f 65%,
+        #39ff14 85%,
+        #39ff14 100%
+    );
+    background-size: 200% auto;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    animation: colorSweep 2.5s linear infinite;
+
+    /* Bloom base */
+    text-shadow: 
+        0 0 10px #39ff14,
+        0 0 20px #39ff14,
+        0 0 30px #39ff14;
+
+    animation: colorSweep 2.5s linear infinite,
+               breatheGlow 3s ease-in-out infinite;
+}
+
+@keyframes breatheGlow {
+    0% {
+        text-shadow:
+            0 0 8px #39ff14,
+            0 0 16px #39ff14,
+            0 0 24px #39ff14;
+    }
+    50% {
+        text-shadow:
+            0 0 15px #39ff14,
+            0 0 30px #39ff14,
+            0 0 45px #39ff14;
+    }
+    100% {
+        text-shadow:
+            0 0 8px #39ff14,
+            0 0 16px #39ff14,
+            0 0 24px #39ff14;
+    }
+}
 
         /* Cuarto espacio (arriba izquierda del bloque final) */
         .bottom-left-text {
@@ -285,12 +318,11 @@
 
     <div class="neon-frame">
         <div class="neon-text">SPEED REVIVAL CRAFT</div>
-        <div class="left-text">STATUS: IN-PROCESS / EN-PROCESO</div>
-        <div class="side-number">121</div>
+        <div class="left-text">STATUS: RESOLVED</div>
+        <div class="side-number">0</div>
         <div class="bottom-left-text">
-            El Server Speed Revival Craft esta en mantenimiento.
-            Intentamos arreglar un problema que esta causando que el server se caiga, devido al consumo excesivo de memoria RAM.
-            Estamos trabajando duro para solucionarlo lo mas rapido posible, gracias por su paciencia y comprension.
+            El Server Speed Revival Craft estaba en mantenimiento por un problema tecnico, pero ya esta solucionado, y el server esta abierto de nuevo.
+            gracias por su paciencia y comprension, y por esperar a la solucion de este problema.
             - glados (el numero significa el progreso de la solucion, 0 es solucionado, y un numero superior es un progreso mas lejano al solucionado)
         </div>
         <div class="line line-3"></div>
